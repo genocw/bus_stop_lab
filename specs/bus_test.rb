@@ -21,9 +21,9 @@ class BusTest < MiniTest::Test
     assert_equal("Ocean Terminal", @bus22.last_stop())
   end
 
-  # def test_bus_can_drive()
-  #   assert_equal("")
-  # end
+  def test_bus_can_drive()
+    assert_equal("Brum brum", @bus22.drive())
+  end
 
   def test_count()
     assert_equal(0, @bus22.count())
@@ -36,9 +36,16 @@ class BusTest < MiniTest::Test
     assert_equal(1, @bus22.count())
   end
 
+  def test_drop_off_person()
+    person = Person.new("David Bowie", 65)
+    @bus22.drop_off(person)
+    assert_equal(0, @bus22.count())
+  end
 
-
-
+  def test_empty_passengers()
+    @bus22.empty_passengers("Ocean Terminal")
+    assert_equal(0, @bus22.count())
+  end
 
 
 

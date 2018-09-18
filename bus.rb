@@ -9,6 +9,11 @@ class Bus
     @passengers = []
   end
 
+
+  def drive()
+    return "Brum brum"
+  end
+
   def count()
     return @passengers.length()
   end
@@ -17,9 +22,15 @@ class Bus
     @passengers.push(person)
   end
 
+  def drop_off(person)
+    @passengers.delete(person)
+  end
 
-
-
+  def empty_passengers(destination)
+    if destination == @last_stop
+      @passengers.clear()
+    end
+  end
 
 
 
