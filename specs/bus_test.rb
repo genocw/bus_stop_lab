@@ -1,6 +1,7 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../bus.rb")
+require_relative("../busstop.rb")
 
 
 class BusTest < MiniTest::Test
@@ -19,7 +20,9 @@ class BusTest < MiniTest::Test
     assert_equal("Ocean Terminal", @bus22.last_stop())
   end
 
-
+  def test_bus_can_drive()
+    
+  end
 
 
 
