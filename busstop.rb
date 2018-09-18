@@ -13,12 +13,4 @@ class BusStop
     @queue.push(person)
   end
 
-
-
-
-
-
-
-
-
 end

@@ -47,8 +47,13 @@ class BusTest < MiniTest::Test
     assert_equal(0, @bus22.count())
   end
 
-
-
+  def test_pick_up_all()
+    person = Person.new("Prince", 44)
+    bus_stop = BusStop.new("Royal Mile")
+    bus_stop.add_person(person)
+    @bus22.pick_up_all(bus_stop)
+    assert_equal(1, @bus22.count())
+  end
 
 
 end
