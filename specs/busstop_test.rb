@@ -18,7 +18,11 @@ class BusStopTest < MiniTest::Test
     assert_equal(0, @royal_mile.queue().length())
   end
 
-
+  def test_add_person_to_queue()
+    person1 = Person.new("Prince", 44)
+    @royal_mile.add_person(person1)
+    assert_equal(1, @royal_mile.queue().length())
+  end
 
 
 
